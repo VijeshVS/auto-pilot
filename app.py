@@ -6,6 +6,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 import os
 from dotenv import load_dotenv
 import subprocess
+import platform
 
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -34,9 +35,10 @@ def execute_command(command):
 tools = [execute_command]
 app = create_react_agent(LLM, tools, checkpointer = checkpointer)
 
-SYSTEM_PROMPT = """
-You are an AI assistant that can execute linux commands.
-You are provided with required tools. Understand the user's input and execute the command.
+SYSTEM_PROMPT = f"""
+You are an AI assistant that can execute Linux commands.
+You are provided with the required tools. Understand the user's input and execute the command.
+Generate commands that are compatible with {platform.platform()}.
 """
 
 messages = [ SystemMessage(SYSTEM_PROMPT) ]
