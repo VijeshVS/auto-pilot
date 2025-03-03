@@ -39,7 +39,7 @@ You are an AI assistant that can execute linux commands.
 You are provided with required tools. Understand the user's input and execute the command.
 """
 
-messages = [SystemMessage(SYSTEM_PROMPT)]
+messages = [ SystemMessage(SYSTEM_PROMPT) ]
 
 def run():
     command = input("> ")
@@ -49,6 +49,7 @@ def run():
         exit()
 
     messages.append(HumanMessage(command))
+    
     response = app.invoke({
         "messages" : messages,
     },
