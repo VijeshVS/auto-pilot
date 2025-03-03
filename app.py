@@ -16,16 +16,20 @@ checkpointer = MemorySaver()
 @tool
 def execute_command(command):
     """
-    Execute a linux command and return the result
+    Execute a Linux command and return the result.
+    Supports commands with pipes, redirections, and file modifications.
     """
-    print(command)
-    
-    result = subprocess.run(command.split(" "), capture_output=True, text=True)
+
+    print(f"Executing: {command}")
+
+    # Using shell = True to handle complex commands with pipes/redirections
+    result = subprocess.run(command, capture_output=True, text=True, shell=True)
 
     if result.returncode != 0:
         return f"Error: {result.stderr}"
     
-    return result.stdout
+    return result.stdout.strip()  # Strip extra newlines
+
 
 tools = [execute_command]
 app = create_react_agent(LLM, tools, checkpointer = checkpointer)
