@@ -53,8 +53,10 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
 
 ### Embedding Auto Pilot into Your System
 
-1. Modify the `run-app.sh` file and add the correct directory paths.
-2. Create an alias for easier access:
+1. Copy the project to a safe directory.
+2. Copy the `env-activate` script and `app.py` file to the desired directories.
+3. Modify the `run-app.sh` file and add the correct directory paths.
+4. Create an alias for easier access:
    ```bash
    alias runai='path-to-sh-file'
    ```
