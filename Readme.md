@@ -8,7 +8,7 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
 - **Built with LangChain & LangGraph:** Efficiently utilizes LangChain and LangGraph to process and execute commands.
 - **Reason + Act Agent:** An intelligent agent that reasons through user queries and takes appropriate actions to provide accurate and relevant responses.
 - **Powered by LLaMA 8B via Groq:** Uses the LLaMA 8B model, available through the Groq platform, for AI-driven responses.
-- **Dynamic Tool Calling:** The assistant utilizes an `execute_command` tool to run user-requested commands dynamically.
+- **Dynamic Tool Calling:** The assistant utilizes the required tools to run user-requested commands dynamically.
 - **Cross-Platform Adaptability:** Auto Pilot intelligently adjusts commands based on the operating system it is running on.
 
 ## Tech Stack
@@ -18,41 +18,50 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
 - **Large Language Model:** LLaMA 8B (via Groq)
 - **Cross-Platform Compatibility:** Windows, macOS, Linux
 
-## How It Works
+## Prerequisites
 
-1. **User Input:** The user provides a natural language command or query.
-2. **AI Processing:** The model interprets the input and selects the appropriate command.
-3. **Tool Execution:** The `execute_command` tool runs the command when needed.
-4. **Dynamic Adaptation:** The system modifies commands based on the OS environment.
+- Ensure that the latest version of Python is installed on your system.
 
-## Setting up auto-pilot locally
+## Setting Up Auto-Pilot Locally
 
-1. Create a virtual environment:
+1. **Create a virtual environment:**  
 
    ```bash
    virtualenv env
-   ```
-2. Activate the virtual environment:
+   ```  
 
-   - On Windows:
+2. **Activate the virtual environment:**  
+
+   - On **Windows**:  
      ```bash
      env\Scripts\activate
-     ```
-   - On macOS/Linux:
+     ```  
+   - On **macOS/Linux**:  
      ```bash
      source env/bin/activate
-     ```
-   
-3. Install dependencies:
+     ```  
+
+3. **Install dependencies:**  
 
    ```bash
    pip install -r requirements.txt
-   ```
-4. Run the application:
+   ```  
+
+4. **Set up environment variables:** 
+
+   ```bash
+   mv .env.example .env
+   ```  
+   - Open `.env` in a text editor and add your **Groq API key**:  
+     ```ini
+     GROQ_API_KEY=your_groq_api_key_here
+     ```  
+
+5. **Run the application:** 
 
    ```bash
    python app.py
-   ```
+   ```  
 
 ### Steps to Embed Auto Pilot into Your System
 
@@ -61,7 +70,7 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
 3. Modify the `run-app.sh` file and replace the copied directory paths.
 4. Create an alias for easier access:
    ```bash
-   alias runai='path-to-sh-file'
+   alias runai='./path-to-sh-file'
    ```
 5. Now you can invoke ai-assistant by using `runai`
 
