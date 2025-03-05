@@ -25,9 +25,7 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
 3. **Tool Execution:** The `execute_command` tool runs the command when needed.
 4. **Dynamic Adaptation:** The system modifies commands based on the OS environment.
 
-## Installation
-
-### Setting Up Auto Pilot
+## Setting up auto-pilot locally
 
 1. Create a virtual environment:
 
@@ -56,7 +54,7 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
    python app.py
    ```
 
-### Embedding Auto Pilot into Your System
+### Steps to Embed Auto Pilot into Your System
 
 1. Copy the project to a safe directory.
 2. Copy the path of bin/activate and app.py.
@@ -65,7 +63,7 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
    ```bash
    alias runai='path-to-sh-file'
    ```
-5. Now you can invoke ai-assistant using runai
+5. Now you can invoke ai-assistant by using `runai`
 
 ## Contributing
 
