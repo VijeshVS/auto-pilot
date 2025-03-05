@@ -30,10 +30,12 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
 ### Setting Up Auto Pilot
 
 1. Create a virtual environment:
+
    ```bash
    virtualenv env
    ```
 2. Activate the virtual environment:
+
    - On Windows:
      ```bash
      env\Scripts\activate
@@ -42,11 +44,14 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
      ```bash
      source env/bin/activate
      ```
+   
 3. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 4. Run the application:
+
    ```bash
    python app.py
    ```
@@ -54,12 +59,13 @@ Auto Pilot is an AI-powered terminal assistant designed to eliminate the need fo
 ### Embedding Auto Pilot into Your System
 
 1. Copy the project to a safe directory.
-2. Copy the `env-activate` script and `app.py` file to the desired directories.
-3. Modify the `run-app.sh` file and add the correct directory paths.
+2. Copy the path of bin/activate and app.py.
+3. Modify the `run-app.sh` file and replace the copied directory paths.
 4. Create an alias for easier access:
    ```bash
    alias runai='path-to-sh-file'
    ```
+5. Now you can invoke ai-assistant using runai
 
 ## Contributing
 
